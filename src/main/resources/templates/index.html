@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.og">
+<head>
+    <meta charset="UTF-8">
+    <title>Check value</title>
+</head>
+<body>
+        <!--Conditions and ternary operators in Thymeleaf-->
+
+        <!--Using a simple th:if statement renders the content of the tag if the condition is true-->
+        <p th:if="${value==null}">There is no value </p>
+
+        <!--Using a simple condition that tests for whether a condition is false -->
+        <p th:if="${value!=null}">There is a value in value </p>
+
+        <!--Checking to see if a value is available, and useing a ternary operator to display the results -->
+        <p th:text="${value==null}?'There is no value':'There is a value'"></p>
+
+        <!--Checking for a numeric value -->
+        <p th:text="${value>10}?'The value is greater than 10':'The value is less than 10'"></p>
+
+
+        <!--You can also check for strings-->
+        <!--Was text passed as a parameter with a value?-->
+        <p th:if="${text}">A text parameter was entered</p>
+
+        <p th:if="${#strings.equals(text,'hello')}">How are you?</p>
+
+        <p th:text="${text}=='hi'?'Hello, how are you?!':'What\'s up?'"></p>
+
+</body>
+</html>
